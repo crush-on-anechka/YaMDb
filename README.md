@@ -18,11 +18,11 @@
 
 ### Шаблон наполнения env-файла
 DB_ENGINE=django.db.backends.postgresql  
-DB_NAME=<db name>  
-POSTGRES_USER=<username>  
-POSTGRES_PASSWORD=<password>  
-DB_HOST=<container name>  
-DB_PORT=<db port>  
+DB_NAME=your_db_name  
+POSTGRES_USER=your_username  
+POSTGRES_PASSWORD=your_password  
+DB_HOST=your_container_name  
+DB_PORT=your_db_port  
 
 ### Запуск приложения
 Установите приложение Docker  
@@ -30,13 +30,13 @@ DB_PORT=<db port>
 `> curl -fsSL https://get.docker.com -o get-docker.sh`  
 `> sh get-docker.sh`  
 
-Перейдите в директорию, в которой находится docker-compose
+Перейдите в директорию, в которой находится docker-compose  
 `> cd ./infra_sp2/infra/`  
 
-Запустите docker-compose
+Запустите docker-compose  
 `> docker-compose up`  
 
-Чтобы заполнить БД данными из файла с фикстурами, выполните команду
+Чтобы заполнить БД данными из файла с фикстурами, выполните команду  
 `> docker-compose exec web python manage.py loaddata fixtures.json`  
 
 ### Документация к API
