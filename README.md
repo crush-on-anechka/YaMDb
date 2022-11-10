@@ -30,11 +30,14 @@ DB_PORT=your_db_port
 `> curl -fsSL https://get.docker.com -o get-docker.sh`  
 `> sh get-docker.sh`  
 
-Перейдите в директорию, в которой находится docker-compose  
+Перейдите в директорию, в которой находится docker-compose.yaml, и запустите его  
 `> cd ./infra_sp2/infra/`  
-
-Запустите docker-compose  
 `> docker-compose up`  
+
+Выполните миграции и соберите статические файлы  
+`> docker-compose exec web python manage.py makemigrations`  
+`> docker-compose exec web python manage.py migrate`  
+`> docker-compose exec web python manage.py collectstatic`  
 
 Чтобы заполнить БД данными из файла с фикстурами, выполните команду  
 `> docker-compose exec web python manage.py loaddata fixtures.json`  
